@@ -16,6 +16,7 @@ function App() {
       <input type="text" ref={todoRef} />
       <button onClick={addTodoList}>Add Todo</button>
       <button>Clear Todos</button>
+      <button>Submit</button>
     </>
 
   )
