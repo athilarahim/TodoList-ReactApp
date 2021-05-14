@@ -42,7 +42,7 @@ function handleClearTodos(){
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
       <input type="text" ref={todoRef} />
       <button onClick={addTodoList}>Add Todo</button>
-      <button onClick={handleClearTodos}>Clear Completed work</button>
+      <p><button onClick={handleClearTodos}>Clear Completed work</button></p>
       <div>{todos.filter(todo => !todo.completed).length}left to do</div>
     </>
 
