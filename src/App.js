@@ -38,6 +38,18 @@ function handleClearTodos(){
   setTodos(newTodos)
 }
 
+
+const [textColor, setTextColor] = useState('black');
+const [isBlack, setIsBlack] = useState(true);
+
+const handleChnageTextColor = (e) => {
+  setIsBlack(!isBlack);
+  setTextColor(isBlack ? 'green' : 'black ');
+}
+
+
+
+
   return (
     <>
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
@@ -45,10 +57,14 @@ function handleClearTodos(){
       <button onClick={addTodoList}>Add Todo</button>
       <p><button onClick={handleClearTodos}>Clear Completed work</button></p>
       <div>{todos.filter(todo => !todo.completed).length}left to do</div>
+      <p><button value={isBlack} onClick={handleChnageTextColor}>Click here</button></p>
+      <p><button style={{ background:textColor}}>Changing color</button></p>
+      
     </>
 
   )
 }
+
 
 
 export default App;
