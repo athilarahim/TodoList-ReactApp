@@ -1,0 +1,16 @@
+button {
+    background-color:rgb(6, 80, 80); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    margin-left: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+  }
+
+  button:hover {
+    background-color: rgb(9, 53, 148);
+  }
+  
