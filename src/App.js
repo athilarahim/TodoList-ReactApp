@@ -39,15 +39,8 @@ function handleClearTodos(){
 }
 
 
-const [textColor, setTextColor] = useState('black');
-const [isBlack, setIsBlack] = useState(true);
 
-const handleChnageTextColor = (e) => {
-  setIsBlack(!isBlack);
-  setTextColor(isBlack ? 'green' : 'black ');
-}
-
-
+const [isdone,setisdone] = useState(false)
 
 
   return (
@@ -55,10 +48,15 @@ const handleChnageTextColor = (e) => {
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
       <input type="text" ref={todoRef} />
       <button onClick={addTodoList}>Add Todo</button>
+      <div><b>{todos.filter(todo => !todo.completed).length}left to do</b></div>
       <p><button onClick={handleClearTodos}>Clear Completed work</button></p>
-      <div>{todos.filter(todo => !todo.completed).length}left to do</div>
-      <p><button value={isBlack} onClick={handleChnageTextColor}>Click here</button></p>
-      <p><button style={{ background:textColor}}>Changing color</button></p>
+      {isdone?
+      (<p><button style={{ background:'green'}} onClick={ () =>{
+        setisdone(false)}}>Mark as undone</button></p>):(<p><button style={{ background:'black'}} onClick={ () =>{
+          setisdone(true)}}>Mark as done</button></p>)}
+
+      
+
       
     </>
 
